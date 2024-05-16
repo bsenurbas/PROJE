@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+</head>
+<body>
+<div class="kutu">
+  <h2>Kayıt Ol</h2>
+  <form class="form-kayit" action="{% url 'register' %}" method="POST">
+    {% csrf_token %}
+    <div class="form-giris">
+      <input type="text" name="first_name" required>
+      <label>Ad</label>
+    </div>
+    <div class="form-giris">
+      <input type="text" name="last_name" required>
+      <label>Soyad</label>
+    </div>
+    <div class="form-giris">
+      <input type="text" name="username" required>
+      <label>Kullanıcı Adı</label>
+    </div>
+    <div class="form-giris">
+      <input type="email" name="email" required>
+      <label>E-Posta</label>
+    </div>
+    <div class="form-giris">
+      <input type="password" name="password1" required>
+      <label>Şifre</label>
+    </div>
+    <div class="form-giris">
+      <input type="password" name="password2" required>
+      <label>Şifre Tekrar</label>
+    </div>
+    <div class="form-giris">
+      <input type="date" name="birth_date" required>
+    </div>
+    <input type="submit" class="girisbuton" value="Kayıt Ol">
+  </form>
+  <div class="kayit-yazi">Zaten hesabın var mı? <a href="{% url 'login' %}">Giriş Yap</a></div>
+</div>
+</body>
+</html>

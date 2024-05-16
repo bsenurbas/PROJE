@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sağlıklı Yaşam Platformu</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'user.css' %}">
+</head>
+<body>
+    <div class="menu-btn">
+        <i class="fas fa-bars fa-2x"></i>
+    </div>
+    
+    <div class="container">
+        <nav class="main-nav">
+            <img class="logo" src="{% static 'logonew.png' %}">
+        
+            <ul class="main-menu">
+                <li><a href="{% url 'home' %}">Ana Sayfa</a></li>
+                <li><a href="{% url 'diets_page' %}">Diyet</a></li>
+                <li><a href="{% url 'training_page' %}">Egzersiz</a></li>
+                <li><a href="#">Tarifler</a></li>
+                <li><a href="{% url 'contact_page' %}">İletişim</a></li>
+                <li id="username"><h2 style="font-size: 20px; color:rgb(65, 65, 65);">Hoşgeldin {{username}}</h2></li>
+            </ul>
+            <ul class="right-menu">
+                <li>
+                    <a href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    <header id="showcase" class="showcase">
+        <h2>HEALIFE</h2>
+        <p>
+            Hayatınızı değiştirecek sağlıklı yaşam ipuçlarına koçlarımızla ulaşabilirsiniz.
+        </p>
+        <a href="#home-cards" class="btn">
+            Hemen Başla <i class="fas fa-chevron-right"></i>
+        </a>
+    </header>
+        <table>
+            <tr>
+                <td>
+                    <section id="home-cards" class="home-cards">
+                        <div>
+                            <img src="{% static 'apo.jpg' %}">
+                            <h3>Abdullah Zengin</h3>
+                            <p>
+                                Sağlık, hayatınızın temelidir; bedeninizi dengede tutmak için önceliğiniz olmalıdır.
+                            </p>
+                            <a href="#">Daha Fazla Bilgi <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </section>
+                </td>
+                <td>
+                    <section class="home-cards">
+                        <div>
+                            <img src="{% static 'ego.jpg' %}">
+                            <h3>Ege Kara</h3>
+                            <p>
+                                Mutluluk, sağlıklı bir yaşamın en önemli sonucudur.
+                            </p>
+                            <a href="#">Daha Fazla Bilgi <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </section>
+                </td>
+                <td>
+                    <section class="home-cards">
+                        <div>
+                            <img src="{% static 'ibo.jpg' %}">
+                            <h3>İbrahim Biner</h3>
+                            <p>
+                                Spor, güçlü bir vücut ve zihin için gerekli olan enerjiyi ve dayanıklılığı sağlar.
+                            </p>
+                            <a href="#">Daha Fazla Bilgi <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </section>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <section class="home-cards">
+                        <div>
+                            <img src="{% static 'yavo.jpg' %}">
+                            <h3>Yavuz Selim Çoraklı</h3>
+                            <p>
+                                Yoga, bedeninizi ve zihninizi uyum içinde tutarak stresi azaltır ve içsel huzurunuzu artırır.
+                            </p>
+                            <a href="#">Daha Fazla Bilgi <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </section>
+                </td>
+                <td>
+                    <section class="home-cards">
+                        <div>
+                            <img src="{% static 'sudo.jpg' %}">
+                            <h3>Sude Çokyaşar</h3>
+                            <p>   
+                            Beslenme alışkanlıklarınızı dengeli ve sağlıklı tutun.
+                            </p>
+                            <a href="#">Daha Fazla Bilgi <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </section>
+                </td>
+            </tr>
+        </table>
+        <section class="connection">
+            <div class="content">
+                <h2>İletişime Geçin</h2>
+                <p>Bize ulaşarak sağlıklı yaşamınızı nasıl iyileştirebileceğinizi öğrenin.</p>
+                <a href="{% url 'contact_page' %}" class="btn">
+                    İletişime Geçin <i class="fas fa-chevron-right"></i>
+                </a>
+                
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <div class="footer-inner">
+                <div><i class="fas fa-globe fa-2x"></i> Türkçe</div>
+                <ul>
+                    <li><a href="#">Site Haritası</a></li>
+                    <li><a href="#">Bize Ulaşın</a></li>
+                    <li><a href="#">Gizlilik & Çerezler</a></li>
+                    <li><a href="#">Kullanım Şartları</a></li>
+                    <li><a href="#">Markalar</a></li>
+                    <li><a href="#">Güvenlik & Ekoloji</a></li>
+                    <li><a href="https://www.saglik.gov.tr">&copy; SağlıklıYaşam 2024</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

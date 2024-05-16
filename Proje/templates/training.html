@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egzersiz Rehberi</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'training.css' %}">
+</head>
+<body>
+    <div class="menu-btn">
+        <i class="fas fa-bars fa-2x"></i>
+    </div>
+    <div class="container">
+        <nav class="main-nav">
+            <img class="logo" src="{% static 'logonew.png' %}">
+        
+            <ul class="main-menu">
+                <li><a href="#">Ana Sayfa</a></li>
+                <li><a href="#1">Başlangıç Seviye</a></li>
+                <li><a href="#2">Orta Seviye</a></li>
+                <li><a href="#3">İleri Seviye</a></li>
+            </ul>
+            <ul class="right-menu">
+                <li>
+                    <a href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <table>
+            <tr>
+                <td>    
+                    <br>
+                    <h2 id="1">1. Başlangıç Seviyesi Egzersizleri</h2>
+                    <br>
+                    <p>Bu kategori, fitness yolculuğuna yeni başlayanlar veya düşük yoğunluklu egzersizler arayanlar için uygundur.</p>
+                    <br>
+                    <ol>
+                        <li><h3><p id="A">Yürüyüş:</p></h3> Günlük 30 dakikalık düzenli yürüyüşler. Parkta, mahallede ya da yürüyüş bandında gerçekleştirilebilir.</li>
+                        <br>
+                        <li><h3><p id="A">Temel Pilates Hareketleri:</p></h3>
+                            <ul>
+                                <li>Pelvic Curl: Omurgayı yavaşça kaldırma ve indirme</li>
+                                <li>Chest Lift: Üst gövdeyi kaldırarak karın kaslarını çalıştırma</li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li> <h3> <p id="A">Kolay Yoga Pozisyonları:</p></h3>
+                            <ul>
+                                <li>Çocuk Pozisyonu (Balasana): Rahatlama ve esneme</li>
+                                <li>Ağaç Pozisyonu (Vrksasana): Denge ve odaklanmayı artırma</li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li><h3><p id="A">Hafif Esneme Rutinleri:</p></h3>
+                            <ul>
+                                <li>Baş üzerinden kol uzatma: Omuzları ve sırt üstü bölgesini esnetir.</li>
+                                <li>Ayak parmaklarına dokunma: Bacak arkası ve bel esnemesi sağlar.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </td>
+                <td><img src="{% static 'diet.png' %}" alt="Başlangıç Seviyesi Egzersizi"></td>
+            </tr>
+            <tr>
+                <td><img src="{% static 'workout.png' %}" alt="Orta Seviye Egzersizi"></td>
+                <td>
+                    <br>
+                    <h2 id="2">2. Orta Seviye Egzersizleri</h2>
+                    <br>
+                    <p>Biraz daha zorlayıcı hareketlerle fitness seviyesini artırmak isteyenler için idealdir.</p>
+                    <br>
+                    <ol>
+                        <li><h3><p id="A">Hızlı Tempo Yürüyüş:</h3></p> Daha hızlı ve tempolu yürüyüşler, kalp ritmini artırarak daha fazla kalori yakımı sağlar.</li>
+                        <br>
+                        <li><h3><p id="A">Fonksiyonel Antrenman:</p></h3>
+                            <ul>
+                                <li>Squat (Çömelmek): Bacak ve kalça kaslarını güçlendirir.</li>
+                                <li>Lunge (Bacak Öne Adım): Bacak ve denge gelişimine katkıda bulunur.</li>
+                            </ul>
+                        </li>
+                        
+                        <br>
+                        <li><h3><p id="A">Orta Seviye Yoga Pozları:</p></h3>
+                            <ul>
+                                <li>Savaşçı Pozisyonu (Virabhadrasana): Bacaklar, kollar ve gövde çalışır.</li>
+                                <li>Köprü Pozisyonu (Setu Bandhasana): Sırt ve bacak esnekliğini artırır.</li>
+                            </ul>
+                        </li>
+                        
+                        <br>
+                        <li><p id="A">Hafif Ağırlıklarla Kuvvet Antrenmanı:</p>
+                            <ul>
+                                <li>Dumbbell Press: Göğüs, omuz ve triceps kaslarını çalıştırır.</li>
+                                <li>Bent-over Row: Sırt ve biceps kaslarını geliştirir.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    
+                    <br>
+                    <h2 id="3">3. İleri Seviye Egzersizleri</h2>
+                    <br>
+                    <p>Daha yoğun ve zorlayıcı egzersizlerle fiziksel sınırları zorlamak isteyenler için tasarlanmıştır.</p>
+                    <br>
+                    <ol>
+                        <li><h3><p id="A">Koşu:</p></h3> Haftada en az 3-4 kez, her seferinde 30 dakika veya daha fazla süren koşular.</li>
+                        <br>
+                        <li><h3><p id="A">Crossfit Rutinleri:</p></h3>
+                            <ul>
+                                <li>Box Jump: Patlayıcı güç ve hızı artırır.</li>
+                                <li>Deadlift: Tüm vücut kuvvetini geliştirir.</li>
+                            </ul>
+                        </li>
+                        
+                        <br>
+                        <li><h3><p id="A">İleri Seviye Pilates:</p></h3>
+                            <ul>
+                                <li>Teaser: Tüm karın kaslarını çalıştırarak denge ve kontrol sağlar.</li>
+                                <li>Pilates Push-up: Gövde stabilitesini ve üst vücut gücünü artırır.</li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li><h3><p id="A">Ağırlık Kaldırma Teknikleri:</p></h3>
+                            <ul>
+                                <li>Squat with Barbell: Bacak, kalça ve sırt kaslarını güçlendirir.</li>
+                                <li>Clean and Jerk: Koordinasyon, güç ve patlayıcılık gerektiren kompleks bir hareket.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </td>
+                <td><img src="{% static 'healthy.png' %}" alt="İleri Seviye Egzersizi"></td>
+            </tr>
+        </table>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-inner">
+                <div><i class="fas fa-globe fa-2x"></i> Türkçe</div>
+                <ul>
+                    <li><a href="#">Site Haritası</a></li>
+                    <li><a href="#">Bize Ulaşın</a></li>
+                    <li><a href="#">Gizlilik & Çerezler</a></li>
+                    <li><a href="#">Kullanım Şartları</a></li>
+                    <li><a href="#">Markalar</a></li>
+                    <li><a href="#">Güvenlik & Ekoloji</a></li>
+                    <li><a href="#">&copy; SağlıklıYaşam 2024</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

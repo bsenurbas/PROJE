@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+</head>
+<body>
+    
+    <div class="main-container">
+      <div class="blur-circle1">
+  
+      </div>
+      <div class="blur-circle2">
+  
+      </div>
+        <!-- Start Landing Page -->
+    <div class="landing-page">
+      <header>
+        <div class="container">
+          <img class="logoimg" src="{% static 'logonew.png' %}">
+          <a href="#" class="logo"><b style="font-size: 30px; margin-right: 60%;">Healife</b></a>
+          <ul class="links">
+            <li>Anasayfa</li>
+            <li>Hakkımızda</li>
+            <li>Bilgi</li>
+            <li><a href="{% url 'login' %}">Giriş Yap →</a></li>
+            <li><a href="{% url 'register' %}">Kayıt Ol →</a></li>
+          </ul>
+        </div>
+      </header>
+      <div class="content">
+        <div class="container">
+          <div class="info">
+            <section id="homeSection">
+            <h1>Size Özel Sağlıklı Yaşam Dünyası</h1> 
+            <h2>   Sağlığa dair her şey</h2>
+            <br><br>
+            <p>Healife ile bilgi dolu makaleler, lezzetli ve besleyici tarifler, etkili egzersiz programları ve sağlıklı yaşamla ilgili güvenilir bilgilerle dolu bir dünyaya adım atacaksınız. Her adımınızda konusunda uzman kadromuz ve yapay zekayla size destek olacak ve sağlıklı yaşam hedeflerinize ulaşmanızı sağlayacak kaynaklarımızı sizlere sunacağız.</p>
+            <button class="butonn" ><a href="{% url 'contact_page' %}"; style="color: white;">Bize Ulaşın</a></button>
+          </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

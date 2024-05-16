@@ -1,0 +1,26 @@
+{% load static %}
+{% csrf_token %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+</head>
+<body>
+  <img class="person" src="https://pixsector.com/cache/94bed8d5/av3cbfdc7ee86dab9a41d.png" alt="Giriş Resmi" class="giris-resmi">
+<div class="kutu">
+  <form class="giris" method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    <div class="form-giris">
+      <input type="text" name="username" id="username" required>
+      <label for="username">Kullanıcı Adın</label>
+    </div>
+    <div class="form-giris">
+      <input type="password" name="password" id="password" required>
+      <label for="password">Şifren</label>
+    </div>
+    <input type="submit" class="girisbuton" value="Giriş Yap">
+  </form>
+  <div class="kayit-yazi">Hesabın yok mu? <a href="{% url 'register' %}" class="kayitolbuton">Kayıt Ol</a></div>
+</div>
+</body>
+</html>
