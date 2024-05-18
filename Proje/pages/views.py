@@ -1,9 +1,9 @@
 from django.views.generic import TemplateView
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
-from .models import UserProfile
+from .models import UserProfile, Recipe, Workout
 
 def register(request):
     if request.method == 'POST':
@@ -53,3 +53,17 @@ def recipies_page(request):
 
 def contact_page(request):
     return render(request, 'contact.html')
+
+def get_bmi_recommendation(request):
+    user_profile, created = UserProfile.objects.get_or_create(user=request.user)
+    
+    user_bmi = user_profile.bmi
+    recipes = Recipe.objects.filter(min_bmi__lte=user_bmi, max_bmi__gte=user_bmi)
+    workouts = Workout.objects.filter(min_bmi__lte=user_bmi, max_bmi__gte=user_bmi)
+
+    context = {
+        'recipes': recipes,
+        'workouts': workouts,
+        'user_bmi': user_bmi,
+    }
+    return render(request, 'bmi_recommendations.html', context)

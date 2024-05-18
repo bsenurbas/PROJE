@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Recommendations</title>
+</head>
+<body>
+    <h1>BMI Recommendations for {{ user_bmi }}</h1>
+
+    <h2>Recommended Recipes</h2>
+    <ul>
+        {% for recipe in recipes %}
+            <li>{{ recipe.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Recommended Workouts</h2>
+    <ul>
+        {% for workout in workouts %}
+            <li>{{ workout.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
