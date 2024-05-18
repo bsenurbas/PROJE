@@ -28,7 +28,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "pages.apps.PagesConfig", # new
+    'django.contrib.sites'
 ]
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -121,3 +123,10 @@ STATICFILES_DIRS = [
 
 LOGOUT_REDIRECT_URL = 'home'  # Kullanıcıların çıkış yaptıktan sonra yönlendirileceği URL adı
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.fastmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'healifereset@fastmail.com'
+EMAIL_HOST_PASSWORD = '4dsmdp3bafjzpvbr'
+DEFAULT_FROM_EMAIL = 'healifereset@fastmail.com'
