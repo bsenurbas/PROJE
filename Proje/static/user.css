@@ -61,7 +61,7 @@ ul {
   margin-left: 20px;
 }
 #username {
-  margin-left: 45%;
+  margin-left: 37%;
 }
 
 .menu-btn {
@@ -311,6 +311,20 @@ ul {
   .links .links-inner {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.logout-btn {
+  padding: 8px 16px;
+  background-color: #29c966; /* Kırmızı tonu */
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  margin-left: 4px;
+}
+
+.logout-btn:hover {
+  background-color: #107035; /* Daha koyu bir kırmızı tonu */
 }
 
 @media(max-width: 500px) {
