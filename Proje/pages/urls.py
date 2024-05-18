@@ -5,6 +5,6 @@ urlpatterns = [
     path("register/", register, name="register"),  
     path('diyet/', diets_page, name='diets_page'), 
     path('egzersiz/', training_page, name='training_page'), 
-    path('tarifler/', recipies_page, name='recipies_page'), 
-    
+    path('tarifler/', recipies_page, name='recipies_page'),
+       
 ]
