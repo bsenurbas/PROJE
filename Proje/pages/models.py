@@ -4,8 +4,8 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(max_length=100)
 
-    def str(self):
-        return self.name 
+    def __str__(self):
+        return self.name
     
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -23,15 +23,15 @@ class UserProfile(models.Model):
         return self.user.username
     
 class Recipe(models.Model):
-    name = models.CharField(max_length=100)
+    goal = models.CharField(max_length=100)
     ingredients = models.TextField()
-    instructions = models.TextField()
+    list = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     min_bmi = models.FloatField()
     max_bmi = models.FloatField()
 
-    def str(self):
-        return self.name
+    def __str__(self):
+        return self.goal
 
 class Workout(models.Model):
     name = models.CharField(max_length=100)
