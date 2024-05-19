@@ -56,8 +56,11 @@ def contact_page(request):
 
 def get_bmi_recommendation(request):
     user_profile, created = UserProfile.objects.get_or_create(user=request.user)
-    
-    user_bmi = user_profile.bmi
+    user_weight = float(request.GET.get('weight', 70))
+    user_height = float(request.GET.get('height', 175))
+    if user_height != 0:
+            user_bmi = calculate_bmi(user_weight, user_height)
+
     recipes = Recipe.objects.filter(min_bmi__lte=user_bmi, max_bmi__gte=user_bmi)
     workouts = Workout.objects.filter(min_bmi__lte=user_bmi, max_bmi__gte=user_bmi)
 
@@ -67,3 +70,9 @@ def get_bmi_recommendation(request):
         'user_bmi': user_bmi,
     }
     return render(request, 'bmi_recommendations.html', context)
+
+def calculate_bmi(weight, height):
+    height_meters = height / 100  # cm cinsinden gelen boyu metreye çeviriyoruz
+    bmi = weight / (height_meters * height_meters)
+    return bmi
+

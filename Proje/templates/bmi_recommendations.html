@@ -1,23 +1,88 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
     <title>BMI Recommendations</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bmi_recommendations.css' %}">
 </head>
 <body>
-    <h1>BMI Recommendations for {{ user_bmi }}</h1>
+    <body>
+        <div class="menu-btn">
+            <i class="fas fa-bars fa-2x"></i>
+        </div>
+        
+        <div class="container">
+            <nav class="main-nav">
+                <img class="logo" src="{% static 'logonew.png' %}">
+            
+                <ul class="main-menu">
+                    <li><a href="#">Ana Sayfa</a></li>
+                    <li><a href="#diyet1">Kilo Vermek İsteyenler için</a></li>
+                    <li><a href="#diyet2">Kilo Almak İsteyenler İçin</a></li>
+                    <li><a href="#diyet3">Şeker Hastaları İçin</a></li>
+                    <li><a href="#">Yapay Zeka</a></li>
+                    
 
-    <h2>Recommended Recipes</h2>
-    <ul>
-        {% for recipe in recipes %}
-            <li>{{ recipe.name }}</li>
-        {% endfor %}
-    </ul>
+                </ul>
+            
+                <ul class="right-menu">
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        <h1>Calculate Your BMI</h1>
+        <form action="{% url 'bmi_recommendations' %}" method="get">
+            <label for="weight">Kilo (kg):</label>
+            <input type="number" id="weight" name="weight" required>
+            <br>
+            <label for="height">Boy (cm):</label>
+            <input type="number" id="height" name="height" required>
+            <br>
+            <button type="submit">Hesapla</button>
+        </form>
 
-    <h2>Recommended Workouts</h2>
-    <ul>
-        {% for workout in workouts %}
-            <li>{{ workout.name }}</li>
-        {% endfor %}
-    </ul>
+        <h1>BMI Recommendations for {{ user_bmi }}</h1>
+
+        <h2>Recommended Recipes</h2>
+        <ul>
+            {% for recipe in recipes %}
+                <li>{{ recipe.name }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Recommended Workouts</h2>
+        <ul>
+            {% for workout in workouts %}
+                <li>{{ workout.name }}</li>
+            {% endfor %}
+        </ul>
+   
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div><i class="fas fa-globe fa-2x"></i> Türkçe</div>
+            <ul>
+                <li><a href="#">Site Haritası</a></li>
+                <li><a href="#">Bize Ulaşın</a></li>
+                <li><a href="#">Gizlilik & Çerezler</a></li>
+                <li><a href="#">Kullanım Şartları</a></li>
+                <li><a href="#">Markalar</a></li>
+                <li><a href="#">Güvenlik & Ekoloji</a></li>
+                <li><a href="#">&copy; SağlıklıYaşam 2024</a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
 </body>
 </html>
