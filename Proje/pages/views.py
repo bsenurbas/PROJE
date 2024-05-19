@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
-from .models import UserProfile, Recipe, Workout
+from .models import UserProfile, Recipe, Workout,Category
 
 def register(request):
     if request.method == 'POST':
@@ -56,26 +56,35 @@ def contact_page(request):
 
 def get_bmi_recommendation(request):
     user_bmi = None
+    category = None
     recipes = []
     workouts = []
 
     if request.method == 'POST':
-        height = float(request.POST.get('height'))
-        weight = float(request.POST.get('weight'))
-        user_bmi = weight / (height ** 2)
+        try:
+            height = float(request.POST.get('height'))
+            weight = float(request.POST.get('weight'))
+            user_bmi = weight / (height ** 2)
 
-        recipes = Recipe.objects.filter(min_bmi__lte=user_bmi, max_bmi__gte=user_bmi)
-        workouts = Workout.objects.filter(min_bmi__lte=user_bmi, max_bmi__gte=user_bmi)
+            category = Category.objects.filter(min_bmi__lte=user_bmi, max_bmi__gte=user_bmi).first()
+            if category:
+                recipes = Recipe.objects.filter(category=category)
+                workouts = Workout.objects.filter(category=category)
+        except (ValueError, TypeError):
+            user_bmi = None
 
     context = {
         'user_bmi': user_bmi,
+        'category': category,
         'recipes': recipes,
         'workouts': workouts,
     }
     return render(request, 'bmi_recommendations.html', context)
 
-def calculate_bmi(weight, height):
-    height_meters = height / 100  # cm cinsinden gelen boyu metreye çeviriyoruz
-    bmi = weight / (height_meters * height_meters)
-    return bmi
+def recipe_detail(request, pk):
+    recipe = get_object_or_404(Recipe, pk=pk)
+    return render(request, 'recipe_detail.html', {'recipe': recipe})
 
+def workout_detail(request, pk):
+    workout = get_object_or_404(Workout, pk=pk)
+    return render(request, 'workout_detail.html', {'workout': workout})
