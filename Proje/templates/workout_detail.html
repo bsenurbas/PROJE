@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI Önerileri</title>
+    <title>{{ workout.name }}</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'diyet.css' %}">
 </head>
 <body>
@@ -38,43 +40,26 @@
             </ul>
         </nav>
 
-        <h1>BMI Önerileri</h1>
+        <h1 class="mt-4">{{ workout.name }}</h1>
+        
+        <table class="table table-bordered mt-4">
+            <tbody>
+                <tr>
+                    <th scope="row">Açıklama</th>
+                    <td>{{ workout.description }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Not</th>
+                    <td>{{ workout.note }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Egzersiz</th>
+                    <td>{{ workout.exercise }}</td>
+                </tr>
+            </tbody>
+        </table>
 
-        <form method="post" action="{% url 'bmi_recommendations' %}">
-            {% csrf_token %}
-            <label for="height">Boy (metre):</label>
-            <input type="text" id="height" name="height" required>
-            <br>
-            <label for="weight">Kilo (kg):</label>
-            <input type="text" id="weight" name="weight" required>
-            <br>
-            <button type="submit">Hesapla</button>
-        </form>
-
-        {% if user_bmi %}
-            <h2>BMI Değeriniz: {{ user_bmi }}</h2>
-            {% if category %}
-                <h2>Kategori: {{ category.name }}</h2>
-
-                <h2>Önerilen Tarifler</h2>
-                <ul>
-                    {% for recipe in recipes %}
-                        <li><a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.name }}</a></li>
-                    {% endfor %}
-                </ul>
-
-                <h2>Önerilen Workoutlar</h2>
-                <ul>
-                    {% for workout in workouts %}
-                        <li><a href="{% url 'workout_detail' workout.pk %}">{{ workout.name }}</a></li>
-                    {% endfor %}
-                </ul>
-            {% else %}
-                <p>Bu BMI değeri için uygun kategori bulunamadı.</p>
-            {% endif %}
-        {% endif %}
-    
-        <footer class="footer">
+        <footer class="footer mt-5">
             <div class="footer-inner">
                 <div><i class="fas fa-globe fa-2x"></i> Türkçe</div>
                 <ul>
@@ -90,7 +75,10 @@
         </footer>
     </div>
 
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
 </body>
 </html>
