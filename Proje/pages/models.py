@@ -40,6 +40,8 @@ class Recipe(models.Model):
     ingredients = models.TextField()
     list = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    min_bmi = models.FloatField(default=0) 
+    max_bmi = models.FloatField(default=50)
 
     def __str__(self):
         return self.name
@@ -50,6 +52,8 @@ class Workout(models.Model):
     note = models.TextField()
     exercise = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    min_bmi = models.FloatField(default=0)  
+    max_bmi = models.FloatField(default=50)
 
     def __str__(self):
         return self.name
