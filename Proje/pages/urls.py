@@ -6,5 +6,5 @@ urlpatterns = [
     path('diyet/', diets_page, name='diets_page'), 
     path('egzersiz/', training_page, name='training_page'), 
     path('tarifler/', recipies_page, name='recipies_page'), 
-     path('bmi-recommendations/', get_bmi_recommendation, name='bmi_recommendations'),
+    path('bmi-recommendations/', get_bmi_recommendation, name='bmi_recommendations'),
 ]

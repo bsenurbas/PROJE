@@ -55,19 +55,22 @@ def contact_page(request):
     return render(request, 'contact.html')
 
 def get_bmi_recommendation(request):
-    user_profile, created = UserProfile.objects.get_or_create(user=request.user)
-    user_weight = float(request.GET.get('weight', 70))
-    user_height = float(request.GET.get('height', 175))
-    if user_height != 0:
-            user_bmi = calculate_bmi(user_weight, user_height)
+    user_bmi = None
+    recipes = []
+    workouts = []
 
-    recipes = Recipe.objects.filter(min_bmi__lte=user_bmi, max_bmi__gte=user_bmi)
-    workouts = Workout.objects.filter(min_bmi__lte=user_bmi, max_bmi__gte=user_bmi)
+    if request.method == 'POST':
+        height = float(request.POST.get('height'))
+        weight = float(request.POST.get('weight'))
+        user_bmi = weight / (height ** 2)
+
+        recipes = Recipe.objects.filter(min_bmi__lte=user_bmi, max_bmi__gte=user_bmi)
+        workouts = Workout.objects.filter(min_bmi__lte=user_bmi, max_bmi__gte=user_bmi)
 
     context = {
+        'user_bmi': user_bmi,
         'recipes': recipes,
         'workouts': workouts,
-        'user_bmi': user_bmi,
     }
     return render(request, 'bmi_recommendations.html', context)
 
