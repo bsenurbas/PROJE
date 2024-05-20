@@ -6,22 +6,23 @@ from django.http import HttpResponse
 from .models import UserProfile, Recipe, Workout,Category, BlogPost ,UploadedFile
 from django.contrib import messages
 import pandas as pd
-from .forms import UploadFileForm,BlogPostForm ,FileUploadForm
-
+from .forms import UploadFileForm,BlogPostForm ,FileUploadForm, CustomUserCreationForm
+from django.contrib.auth.decorators import login_required
 
 
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             UserProfile.objects.create(
                 user=user,
-                birth_date=request.POST['birth_date']
+                birth_date=request.POST.get('birth_date')
             )
+            login(request, user)  # Kullanıcıyı otomatik olarak giriş yaptırma
             return redirect('home')
     else:
-        form = UserCreationForm()
+        form = CustomUserCreationForm()
     return render(request, 'register.html', {'form': form})
 
 def custom_login(request):
@@ -115,12 +116,10 @@ def import_data(request):
         form = UploadFileForm()
     return render(request, 'import_data.html', {'form': form})
 
-# BlogPost listesi için bir görünüm ekleyin
 def blog_list(request):
     posts = BlogPost.objects.all()
     return render(request, 'blog/blog_list.html', {'posts': posts})
 
-# BlogPost oluşturmak için bir görünüm ekleyin
 def blog_create(request):
     if request.method == "POST":
         form = BlogPostForm(request.POST)
