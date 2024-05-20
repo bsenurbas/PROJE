@@ -3,7 +3,12 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
-from .models import UserProfile, Recipe, Workout,Category
+from .models import UserProfile, Recipe, Workout,Category, BlogPost ,UploadedFile
+from django.contrib import messages
+import pandas as pd
+from .forms import UploadFileForm,BlogPostForm ,FileUploadForm
+
+
 
 def register(request):
     if request.method == 'POST':
@@ -88,3 +93,66 @@ def recipe_detail(request, pk):
 def workout_detail(request, pk):
     workout = get_object_or_404(Workout, pk=pk)
     return render(request, 'workout_detail.html', {'workout': workout})
+
+def import_data(request):
+    if request.method == "POST":
+        form = UploadFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            file = request.FILES['file']
+            try:
+                data = pd.read_excel(file)  # Excel dosyasını yükleyin
+                for index, row in data.iterrows():
+                    BlogPost.objects.create(
+                        title=row['Title'],  # Sütun adlarını değiştirin
+                        content=row['Content'],  # Sütun adlarını değiştirin
+                        created_at=row['Created_At']  # Sütun adlarını değiştirin
+                    )
+                messages.success(request, 'Veriler başarıyla yüklendi!')
+            except Exception as e:
+                messages.error(request, f'Hata oluştu: {e}')
+            return redirect('import_data')
+    else:
+        form = UploadFileForm()
+    return render(request, 'import_data.html', {'form': form})
+
+# BlogPost listesi için bir görünüm ekleyin
+def blog_list(request):
+    posts = BlogPost.objects.all()
+    return render(request, 'blog/blog_list.html', {'posts': posts})
+
+# BlogPost oluşturmak için bir görünüm ekleyin
+def blog_create(request):
+    if request.method == "POST":
+        form = BlogPostForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('blog_list')
+    else:
+        form = BlogPostForm()
+    return render(request, 'blog/blog_create.html', {'form': form})
+
+def upload_file(request):
+    if request.method == "POST":
+        form = FileUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            UploadedFile.objects.create(file=request.FILES['file'])
+            return redirect('file_list')  # Dosya yüklendikten sonra yönlendirme
+    else:
+        form = FileUploadForm()
+    return render(request, 'upload_file.html', {'form': form})
+
+def file_list(request):
+    if request.method == 'POST':
+        file_id = request.POST.get('file_id')
+        if file_id:
+            try:
+                file = UploadedFile.objects.get(id=file_id)
+                file.file.delete()  # Dosya sisteminden sil
+                file.delete()  # Veritabanından kaydı sil
+                messages.success(request, 'Dosya başarıyla silindi.')
+            except UploadedFile.DoesNotExist:
+                messages.error(request, 'Dosya bulunamadı.')
+        return redirect('file_list')
+
+    files = UploadedFile.objects.all()
+    return render(request, 'file_list.html', {'files': files})
