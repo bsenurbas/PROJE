@@ -8,7 +8,53 @@ from django.contrib import messages
 import pandas as pd
 from .forms import UploadFileForm,BlogPostForm ,FileUploadForm, CustomUserCreationForm
 from django.contrib.auth.decorators import login_required
+import csv
 
+def export_workout(request, workout_id):
+    # Veritabanından workout çekme
+    workout = Workout.objects.get(id=workout_id)
+    
+    # HttpResponse nesnesi oluşturma
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = f'attachment; filename="{workout.name}.csv"'
+    
+    # CSV yazarı oluşturma
+    writer = csv.writer(response)
+    
+    # CSV dosyasına veri yazma
+    writer.writerow(['Açıklama:'])
+    writer.writerow([workout.description])
+    writer.writerow([''])
+    writer.writerow(['Not:'])
+    writer.writerow([workout.note])
+    writer.writerow([''])
+    writer.writerow(['Egzersiz:'])
+    writer.writerow([workout.exercise])
+    
+    return response
+
+def export_recipe(request, recipe_id):
+    # Veritabanından tarifi çekme
+    recipe = Recipe.objects.get(id=recipe_id)
+    
+    # HttpResponse nesnesi oluşturma
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = f'attachment; filename="{recipe.name}.csv"'
+    
+    # CSV yazarı oluşturma
+    writer = csv.writer(response)
+    
+    # CSV dosyasına veri yazma
+    writer.writerow(['Hedef:'])
+    writer.writerow([recipe.goal])
+    writer.writerow([''])
+    writer.writerow(['Malzemeler:'])
+    writer.writerow([recipe.ingredients])
+    writer.writerow([''])
+    writer.writerow(['Liste:'])
+    writer.writerow([recipe.list])
+    
+    return response
 
 def register(request):
     if request.method == 'POST':
