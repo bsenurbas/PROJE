@@ -49,10 +49,15 @@
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Anasayfa</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'login' %}">Giriş Yap →</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'register' %}">Kayıt Ol →</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'contact_page' %}">İletişim</a></li>
+                    <li id="username">
+                        <h2 style="font-size: 20px; color:rgb(65, 65, 65);">Hoşgeldin {{ username }}</h2>
+                    </li> 
+                    <li><a href="{% url 'home' %}">Ana Sayfa</a></li>
+                    <li><a href="{% url 'diets_page' %}">Diyet</a></li>
+                    <li><a href="{% url 'training_page' %}">Egzersiz</a></li>
+                    <li><a href="#">Tarifler</a></li>
+                    <li><a href="{% url 'contact_page' %}">İletişim</a></li>
+                    <li><a href="{% url 'logout' %}" class="btn logout-btn">Çıkış Yap</a></li> 
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -167,18 +172,7 @@
                 </td>
             </tr>
         </table>
-        <section class="connection">
-            <div class="content">
-                <h2>İletişime Geçin</h2>
-                <p>Bize ulaşarak sağlıklı yaşamınızı nasıl iyileştirebileceğinizi öğrenin.</p>
-                <a href="{% url 'contact_page' %}" class="btn">
-                    İletişime Geçin <i class="fas fa-chevron-right"></i>
-                </a>
-                
-            </div>
-        </section>
-        
-        <!-- ======= Footer ======= -->
+ <!-- ======= Footer ======= -->
     <footer id="footer">
         <div class="footer-top">
             <div class="container">
