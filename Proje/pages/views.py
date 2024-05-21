@@ -204,3 +204,6 @@ def file_list(request):
 
     files = UploadedFile.objects.all()
     return render(request, 'file_list.html', {'files': files})
+
+def yapayzeka(request):
+    return render(request, 'yapayzeka.html')

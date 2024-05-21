@@ -80,11 +80,13 @@
             <h1 class="logo me-auto"><a href="{% url 'home' %}">Healife</a></h1>
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="{% url 'home' %}">Ana Sayfa</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'diets_page' %}">Diyet Planları</a></li>
+                    <li><a class="nav-link scrollto active" href="#hero">Anasayfa</a></li>
+                    <li><a href="{% url 'diets_page' %}">Diyet Planları</a></li>
                     <li><a class="nav-link scrollto" href="{% url 'training_page' %}">Egzersiz Planları</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'ipucu_page' %}">Sağlıklı İpuçları</a></li>
+                    <li><a class="nav-link scrollto" href="#">Sağlıklı İpuçları</a></li>
                     <li><a class="nav-link scrollto" href="#">Yapay Zeka</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'contact_page' %}">İletişim</a></li>
+                    <li><a href="{% url 'logout' %}" class="logout-btn">Çıkış Yap</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
