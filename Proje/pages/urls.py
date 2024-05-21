@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import HomePageView, register, diets_page, training_page, recipies_page, get_bmi_recommendation, recipe_detail, workout_detail
+from .views import HomePageView, register, diets_page, training_page, recipies_page, get_bmi_recommendation, recipe_detail, workout_detail, ipucu_page
 from . import views
 from .views import export_recipe
 from .views import export_workout
@@ -21,4 +21,5 @@ urlpatterns = [
     path('files/', views.file_list, name='file_list'),
     path('export_recipe/<int:recipe_id>/', export_recipe, name='export_recipe'),
     path('export_workout/<int:workout_id>/', export_workout, name='export_workout'),
+    path('ipucları/', ipucu_page, name='ipucu_page'),
 ]

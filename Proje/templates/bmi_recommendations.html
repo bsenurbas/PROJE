@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="{% static 'assets/vendor/fontawesome-free/css/all.min.css' %}">
     <link href="{% static 'home.css' %}" rel="stylesheet">
     <style>
+        #main{
+            margin-top: 8%;
+        }
         .btn-green {
             background-color: #28a745;
             color: white;
@@ -80,7 +83,7 @@
                     <li><a class="nav-link scrollto active" href="{% url 'home' %}">Ana Sayfa</a></li>
                     <li><a class="nav-link scrollto" href="{% url 'diets_page' %}">Diyet Planları</a></li>
                     <li><a class="nav-link scrollto" href="{% url 'training_page' %}">Egzersiz Planları</a></li>
-                    <li><a class="nav-link scrollto" href="#">Sağlıklı İpuçları</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'ipucu_page' %}">Sağlıklı İpuçları</a></li>
                     <li><a class="nav-link scrollto" href="#">Yapay Zeka</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>

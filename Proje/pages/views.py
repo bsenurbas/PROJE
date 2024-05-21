@@ -106,6 +106,9 @@ def recipies_page(request):
 def contact_page(request):
     return render(request, 'contact.html')
 
+def ipucu_page(request):
+    return render(request, 'ipucları.html')
+
 def get_bmi_recommendation(request):
     user_bmi = None
     category = None
