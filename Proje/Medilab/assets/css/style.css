@@ -15,12 +15,12 @@ body {
 }
 
 a {
-  color: #1977cc;
+  color: #107035;
   text-decoration: none;
 }
 
 a:hover {
-  color: #3291e6;
+  color: #107035;
   text-decoration: none;
 }
 
@@ -52,7 +52,7 @@ h6 {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid #1977cc;
+  border: 6px solid #107035;
   border-top-color: #d1e6f9;
   border-radius: 50%;
   width: 60px;
@@ -80,7 +80,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #1977cc;
+  background: #107035;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -94,7 +94,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #298ce5;
+  background: #107035;
   color: #fff;
 }
 
@@ -129,11 +129,11 @@ h6 {
 }
 
 #topbar .contact-info a:hover {
-  color: #1977cc;
+  color: #107035;
 }
 
 #topbar .contact-info i {
-  color: #1977cc;
+  color: #107035;
   padding-right: 4px;
   margin-left: 15px;
   line-height: 0;
@@ -144,7 +144,7 @@ h6 {
 }
 
 #topbar .social-links a {
-  color: #437099;
+  color: #107035;
   padding-left: 15px;
   display: inline-block;
   line-height: 1px;
