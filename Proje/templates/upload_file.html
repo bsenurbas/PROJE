@@ -5,65 +5,169 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dosya Yükle</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'diyet.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/fontawesome-free/css/all.min.css' %}">
+    <link href="{% static 'home.css' %}" rel="stylesheet">
+    <style>
+        .btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+            color: white;
+        }
+
+        .social-links a {
+            color: #28a745;
+            margin-right: 8px;
+            font-size: 24px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #218838;
+        }
+
+        .back-to-top {
+            background: #28a745;
+            color: #fff;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            transition: 0.3s;
+        }
+
+        .back-to-top:hover {
+            background: #218838;
+            color: #fff;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="menu-btn">
-        <i class="fas fa-bars fa-2x"></i>
-    </div>
-
-    <div class="container">
-        <nav class="main-nav">
-            <img class="logo" src="{% static 'logonew.png' %}">
-        
-            <ul class="main-menu">
-                <li><a href="#">Ana Sayfa</a></li>
-                <li><a href="#diyet1">Kilo Vermek İsteyenler için</a></li>
-                <li><a href="#diyet2">Kilo Almak İsteyenler İçin</a></li>
-                <li><a href="#diyet3">Şeker Hastaları İçin</a></li>
-                <li><a href="#">Yapay Zeka</a></li>
-            </ul>
-        
-            <ul class="right-menu">
-                <li>
-                    <a href="#">
-                        <i class="fas fa-search"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="content centered-content">
-            <h1>Dosya Yükle</h1>
-            <form method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit" class="btn">Yükle</button>
-            </form>
-        </div>
-    
-        <footer class="footer">
-            <div class="footer-inner">
-                <div><i class="fas fa-globe fa-2x"></i> Türkçe</div>
-                <ul>
-                    <li><a href="#">Site Haritası</a></li>
-                    <li><a href="#">Bize Ulaşın</a></li>
-                    <li><a href="#">Gizlilik & Çerezler</a></li>
-                    <li><a href="#">Kullanım Şartları</a></li>
-                    <li><a href="#">Markalar</a></li>
-                    <li><a href="#">Güvenlik & Ekoloji</a></li>
-                    <li><a href="#">&copy; SağlıklıYaşam 2024</a></li>
-                </ul>
+    <!-- ======= Top Bar ======= -->
+    <div id="topbar" class="d-flex align-items-center fixed-top">
+        <div class="container d-flex justify-content-between">
+            <div class="contact-info d-flex align-items-center">
+                <i class="bi bi-envelope"></i> <a href="mailto:busenurb277@gmail.com">healife@iletisim.com</a>
+                <i class="bi bi-phone"></i> +1 5589 55488 55
             </div>
-        </footer>
+            <div class="d-none d-lg-flex social-links align-items-center">
+                <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
     </div>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+            <h1 class="logo me-auto"><a href="{% url 'home' %}">Healife</a></h1>
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="{% url 'home' %}">Ana Sayfa</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'diets_page' %}">Diyet Planları</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'training_page' %}">Egzersiz Planları</a></li>
+                    <li><a class="nav-link scrollto" href="#">Sağlıklı İpuçları</a></li>
+                    <li><a class="nav-link scrollto" href="#">Yapay Zeka</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+        </div>
+    </header><!-- End Header -->
+
+    <main id="main">
+        <section class="container my-5">
+            <div class="content centered-content">
+                <h1 class="mb-4"><br>Dosya Yükle</h1>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn">Yükle</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>Healife</h3>
+                        <p><br>
+                            <strong>Phone:</strong> +1 5589 55488 55<br>
+                            <strong>Email:</strong> healife@iletisim.com<br>
+                        </p>
+                    </div>
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Faydalı Linkler</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Anasayfa</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Hakkımızda</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Hizmetler</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Kullanım Şartları</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Gizlilik Politikası</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Hizmetlerimiz</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Online Yaşam Koçluğu</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Sağlıklı Tarifler</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Egzersiz Planları</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Yapay Zeka Danışmanlığı</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>Bültenimize Katılın</h4>
+                        <p>En güncel sağlık ve yaşam ipuçlarını almak için bültenimize abone olun.</p>
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Abone Ol">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                    &copy; Copyright <strong><span>Healife</span></strong>. Tüm Hakları Saklıdır
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    
+    <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
 </body>
+
 </html>
