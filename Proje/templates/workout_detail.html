@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ workout.name }}</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'diyet.css' %}">
+</head>
+<body>
+    <div class="menu-btn">
+        <i class="fas fa-bars fa-2x"></i>
+    </div>
+
+    <div class="container">
+        <nav class="main-nav">
+            <img class="logo" src="{% static 'logonew.png' %}">
+        
+            <ul class="main-menu">
+                <li><a href="#">Ana Sayfa</a></li>
+                <li><a href="#diyet1">Kilo Vermek İsteyenler için</a></li>
+                <li><a href="#diyet2">Kilo Almak İsteyenler İçin</a></li>
+                <li><a href="#diyet3">Şeker Hastaları İçin</a></li>
+                <li><a href="#">Yapay Zeka</a></li>
+            </ul>
+        
+            <ul class="right-menu">
+                <li>
+                    <a href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <h1 class="mt-4">{{ workout.name }}</h1>
+        
+        <table class="table table-bordered mt-4">
+            <tbody>
+                <tr>
+                    <th scope="row">Açıklama</th>
+                    <td>{{ workout.description }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Not</th>
+                    <td>{{ workout.note }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Egzersiz</th>
+                    <td>{{ workout.exercise }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- İndirme düğmesi -->
+        <a href="{% url 'export_workout' workout.id %}" class="btn btn-primary mt-3">Programı İndir</a>
+
+        <footer class="footer mt-5">
+            <div class="footer-inner">
+                <div><i class="fas fa-globe fa-2x"></i> Türkçe</div>
+                <ul>
+                    <li><a href="#">Site Haritası</a></li>
+                    <li><a href="#">Bize Ulaşın</a></li>
+                    <li><a href="#">Gizlilik & Çerezler</a></li>
+                    <li><a href="#">Kullanım Şartları</a></li>
+                    <li><a href="#">Markalar</a></li>
+                    <li><a href="#">Güvenlik & Ekoloji</a></li>
+                    <li><a href="#">&copy; SağlıklıYaşam 2024</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
