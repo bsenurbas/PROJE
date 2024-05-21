@@ -1,63 +1,58 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 
 <head>
     {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI Önerileri</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/vendor/fontawesome-free/css/all.min.css' %}">
-    <link href="{% static 'home.css' %}" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Sağlıklı Yaşam İpuçları</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
     <style>
-        #main{
-            margin-top: 8%;
-        }
-        .btn-green {
-            background-color: #28a745;
-            color: white;
-            border: none;
-        }
 
-        .btn-green:hover {
-            background-color: #218838;
-            color: white;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
         }
-
-        .social-links a {
-            color: #28a745;
-            margin-right: 8px;
-            font-size: 24px;
-            transition: 0.3s;
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
         }
-
-        .social-links a:hover {
-            color: #218838;
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
         }
-
-        .back-to-top {
-            background: #28a745;
-            color: #fff;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            position: fixed;
-            bottom: 15px;
-            right: 15px;
-            transition: 0.3s;
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
         }
-
-        .back-to-top:hover {
-            background: #218838;
-            color: #fff;
+        .baslik{
+            margin-top: 10%;
         }
     </style>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'home.css' %}" rel="stylesheet">
+
 </head>
 
 <body>
+    {% load static %}
     <!-- ======= Top Bar ======= -->
     <div id="topbar" class="d-flex align-items-center fixed-top">
         <div class="container d-flex justify-content-between">
@@ -66,10 +61,10 @@
                 <i class="bi bi-phone"></i> +90 546 546 59 45
             </div>
             <div class="d-none d-lg-flex social-links align-items-center">
-                <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
             </div>
         </div>
     </div>
@@ -77,26 +72,27 @@
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
-            <h1 class="logo me-auto"><a href="{% url 'home' %}">Healife</a></h1>
+
+            <h1 class="logo me-auto" style="color:#28a745 ;"><a href=" ">Healife</a></h1>
+
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Anasayfa</a></li>
-                    <li><a href="{% url 'diets_page' %}">Diyet Planları</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'training_page' %}">Egzersiz Planları</a></li>
-                    <li><a class="nav-link scrollto" href="#">Sağlıklı İpuçları</a></li>
-                    <li><a class="nav-link scrollto" href="#">Yapay Zeka</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'contact_page' %}">İletişim</a></li>
-                    <li><a href="{% url 'logout' %}" class="logout-btn">Çıkış Yap</a></li>
+                    <li><a href="{% url 'home' %}">Ana Sayfa</a></li>
+                    <li><a href="{% url 'diets_page' %}">Diyet</a></li>
+                    <li><a href="{% url 'training_page' %}">Egzersiz</a></li>
+                    <li><a  href="{% url 'upload_file' %}">Gelişim</a></li>
+                    <li><a href="{% url 'logout' %}" class="btn logout-btn">Çıkış Yap</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav>
+            </nav><!-- .navbar -->
+
         </div>
     </header><!-- End Header -->
 
     <main id="main">
         <section class="container my-5">
             <div class="content centered-content">
-                <h1 class="mb-4"><br>BMI Önerileri</h1>
+                <h1 class="mb-4" style="margin-top:8%"><br>BMI Önerileri</h1>
                 <form method="post" action="{% url 'bmi_recommendations' %}">
                     {% csrf_token %}
                     <div class="form-group mb-3">
