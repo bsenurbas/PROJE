@@ -280,7 +280,7 @@ ul {
 
   .main-nav ul.main-menu li {
     padding: 10px;
-    border-bottom: #ccc solid 1px;
+    border-bottom: #ccc solid 0px;
     font-size: 14px;
   }
 
