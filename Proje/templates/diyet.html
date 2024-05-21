@@ -1,320 +1,425 @@
-{% load static %}
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diyet Sayfası</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'diyet.css' %}">
+    {% load static %}
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Healife - Sağlıklı Yaşam</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'home.css' %}" rel="stylesheet">
+
+    <style>
+        .image-container img {
+            width: 30%;
+            height: auto;
+            margin: 10px;
+        }
+    </style>
 </head>
+
 <body>
-    <body>
-        <div class="menu-btn">
-            <i class="fas fa-bars fa-2x"></i>
+    {% load static %}
+    <!-- ======= Top Bar ======= -->
+    <div id="topbar" class="d-flex align-items-center fixed-top">
+        <div class="container d-flex justify-content-between">
+            <div class="contact-info d-flex align-items-center">
+                <i class="bi bi-envelope"></i> <a href="mailto:busenurb277@gmail.com">healife@iletisim.com</a>
+                <i class="bi bi-phone"></i> +1 5589 55488 55
+            </div>
+            <div class="d-none d-lg-flex social-links align-items-center">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
         </div>
-        
-        <div class="container">
-            <nav class="main-nav">
-                <img class="logo" src="{% static 'logonew.png' %}">
-            
-                <ul class="main-menu">
-                    <li><a href="#">Ana Sayfa</a></li>
-                    <li><a href="#diyet1">Kilo Vermek İsteyenler için</a></li>
-                    <li><a href="#diyet2">Kilo Almak İsteyenler İçin</a></li>
-                    <li><a href="#diyet3">Şeker Hastaları İçin</a></li>
-                    <li><a href="#">Yapay Zeka</a></li>
-                    
-
-                </ul>
-            
-                <ul class="right-menu">
-                    <li>
-                        <a href="#">
-                            <i class="fas fa-search"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fas fa-shopping-cart"></i>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-    <h1>Diyetler</h1>
-
-    <div class="image-container">
-        <img src="{% static 'a.png' %}" alt="Resim 1">
-        <img src="{% static 'b.png' %}" alt="Resim 2">
-        <img src="{% static 'c.png' %}" alt="Resim 3">
     </div>
 
-    <h2 id="diyet1">Sağlıklı Kilo Verme Diyet Programı</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Öğün</th>
-                <th>Yiyecek</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td id="title">SABAH (08:00)</td>
-                <td>
-                    <ul>
-                        <li>Yulaf ezmesi veya tam buğday gevrekleri</li>
-                        <li>Biraz ceviz veya badem</li>
-                        <li>Bir dilim tam tahıllı ekmek</li>
-                        <li>Peynir veya bir yumurta</li>
-                        <li>Bir bardak taze sıkılmış meyve suyu veya bir bardak yağsız süt</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td id="title">ARA ÖĞÜN (10:00)</td>
-                <td>
-                    <ul>
-                        <li>Bir meyve (elma, armut, portakal gibi)</li>
-                        <li>Bir avuç badem veya fındık</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td id="title">ÖĞLE (12-13:30)</td>
-                <td>
-                    <ul>
-                        <li>Izgara tavuk göğsü veya ızgara somon</li>
-                        <li>Esmer pirinç veya bulgur pilavı</li>
-                        <li>Sebzeler (brokoli, havuç, kabak gibi) veya salata
-                        </li>
-                        <li>Bir dilim tam tahıllı ekmek</li>
-                    </ul>
-                </td>
-            <tr>
-                <td id="title">ARA ÖĞÜN (15:30)</td>
-                <td>
-                    <ul>
-                        <li>Bir bardak yoğurt veya bir avuç fındık</li>
-                        <li>Bir meyve (muz, çilek, üzüm gibi)</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td id="title">AKŞAM (18-19:30)</td>
-                <td>
-                    <ul>
-                        <li>Fırında veya ızgarada sebzeler (patlıcan, kabak, biber gibi)</li>
-                        <li>Kırmızı et (az yağlı dana eti veya hindi eti)</li>
-                        <li>Bir kase yeşil salata (marul, roka, salatalık gibi) limon ve zeytinyağı ile</li>
-                </td>
-            </tr>
-            <tr>
-                <td id="title">GECE (21:00)</td>
-                <td>
-                    <ul>
-                        <li>Bir bardak süt veya bir avuç kiraz domates</li>
-                        <li>2 tane ince grisini (açlık durumu olursa)</li>
-                        <li>Bir dilim tam tahıllı ekmek veya birkaç tane tam buğday kraker</li>
-                </td>
-            </tr>
-            <tr>
-                <td id="title">NOTLAR:</td>
-                <td>
-                    <ul>
-                    <li>Bol su için, özellikle öğünler arasında ve egzersiz yaparken.</li>
-                    <li>Porsiyon kontrolüne dikkat edin. Yemeğinizden sonra tokluk hissiyle kalkın.</li>
-                    <li>Ara öğünlerinizde protein ve lif içeriği yüksek yiyecekler tercih edin.</li>
-                    <li>Haftada en az 3-4 gün egzersiz yapmaya çalışın, bu size kilo verme sürecinde destek olacaktır.</li>
-                    <li>Sağlıklı beslenmenin yanı sıra yeterli uyku da önemlidir, günde en az 7-8 saat uyumaya özen gösterin.</li>
-                </td>
-            </tr>
-            
-        </tbody>
-    </table>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
 
-    <h2 id="diyet2">Sağlıklı Kilo Alma Diyet Programı</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Öğün</th>
-                <th>Yiyecek</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td id="title">SABAH (08:00)</td>
-                <td>
-                    <ul>
-                        <li>Bir dilim tam buğday ekmeği veya yulaf ezmesi</li>
-                        <li>Bir avuç badem veya fındık</li>
-                        <li>Bir bardak süt veya yoğurt</li>
-                        <li>Bir meyve (muz, üzüm gibi)</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td id="title">ARA ÖĞÜN (10:00)</td>
-                <td>
-                    <ul>
-                        <li>Bir avuç kuru meyve (kayısı, incir gibi)</li>
-                        <li>Bir dilim peynir</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td id="title">ÖĞLE (12-13:30)</td>
-                <td>
-                    <ul>
-                        <li>Izgara tavuk göğsü veya ızgara somon</li>
-                        <li>Esmer pirinç veya bulgur pilavı</li>
-                        <li>Sebzeler (brokoli, havuç, kabak gibi)</li>
-                        <li>Bir kase yoğurt</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td id="title">ARA ÖĞÜN (15:30)</td>
-                <td>
-                    <ul>
-                        <li>Bir dilim tam buğday ekmeği veya tam buğday kraker</li>
-                        <li>Bir avuç fındık veya badem</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td id="title">AKŞAM (18-19:30)</td>
-                <td>
-                    <ul>
-                        <li>Izgara hindi veya dana eti</li>
-                        <li>Kızarmış patates veya tatlı patates</li>
-                        <li>Yeşil salata (marul, roka, salatalık gibi)</li>
-                        <li>Bir dilim tam buğday ekmeği</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td id="title">GECE (21:00)</td>
-                <td>
-                    <ul>
-                        <li>Bir bardak süt veya yoğurt</li>
-                        <li>Bir muz veya kivi</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td id="title">NOTLAR:</td>
-                <td>
-                    <ul>
-                        <li>Bol su için, özellikle öğünler arasında ve egzersiz yaparken.</li>
-                        <li>Porsiyon kontrolüne dikkat edin. Yemeğinizden sonra tokluk hissiyle kalkın.</li>
-                        <li>Ara öğünlerinizde protein ve sağlıklı yağ içeriği yüksek yiyecekler tercih edin.</li>
-                        <li>Haftada en az 3-4 gün egzersiz yapmaya çalışın, bu size sağlıklı kilo alım sürecinde destek olacaktır.</li>
-                        <li>Uykunun önemi unutulmamalıdır, günde en az 7-8 saat uyumaya özen gösterin.</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+            <h1 class="logo me-auto"><a href=" ">Healife</a></h1>
 
-    <h2 id="diyet3">Şeker Hastaları Diyet Programı</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Öğün</th>
-                <th>Yiyecek</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td id="title">KAHVALTI</td>
-                <td>
-                    <ul>
-                        <li>Bir dilim tam buğday ekmeği veya kepekli ekmek</li>
-                        <li>Bir yumurta (haşlanmış veya omlet)</li>
-                        <li>Bir avuç çiğ badem veya fındık</li>
-                        <li>Bir bardak şekersiz çay veya kahve</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td id="title">ARA ÖĞÜN</td>
-                <td>
-                    <ul>
-                        <li>Bir meyve (elma, armut gibi)</li>
-                        <li>Bir avuç ceviz veya fındık</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td id="title">ÖĞLE</td>
-                <td>
-                    <ul>
-                        <li>Izgara tavuk göğsü veya ızgara balık</li>
-                        <li>Közlenmiş sebzeler (biber, patlıcan, kabak gibi)</li>
-                        <li>Bir kase yoğurt</li>
-                        <li>Bir dilim tam buğday ekmeği</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td id="title">ARA ÖĞÜN</td>
-                <td>
-                    <ul>
-                        <li>Bir avuç badem veya fındık</li>
-                        <li>Bir bardak taze sıkılmış meyve suyu (şeker ilave edilmemiş)</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td id="title">AKŞAM</td>
-                <td>
-                    <ul>
-                        <li>Izgara hindi veya dana eti</li>
-                        <li>Kızarmış sebzeler (brokoli, karnabahar gibi)</li>
-                        <li>Yeşil salata (marul, roka, salatalık gibi) limon ve zeytinyağı ile</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td id="title">GECE</td>
-                <td>
-                    <ul>
-                        <li>Bir bardak süt veya yoğurt</li>
-                        <li>Bir dilim tam buğday ekmeği veya birkaç tane tam buğday kraker</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td id="title">NOTLAR:</td>
-                <td>
-                    <ul>
-                        <li>Bol su için, özellikle öğünler arasında.</li>
-                        <li>Porsiyon kontrolüne dikkat edin. Yemeğinizden sonra tokluk hissiyle kalkın.</li>
-                        <li>Taze meyve suyu yerine meyveleri tercih edin.</li>
-                        <li>Tuz ve şeker kullanımını minimumda tutun.</li>
-                        <li>Düzenli egzersiz yapmaya çalışın, bu kan şekeri seviyelerini düzenleyebilir.</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Anasayfa</a></li>
+                    <li><a href="{% url 'training_page' %}">Egzersizler</a></li>
+                    <li><a href="{% url 'recipies_page' %}">Tarifler</a></li>
+                    <li><a href="{% url 'bmi_recommendations' %}">BMI Önerileri</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'contact_page' %}">İletişim</a></li>
+                    <li><a href="{% url 'logout' %}" class="logout-btn">Çıkış Yap</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
 
-     <footer class="footer">
-        <div class="footer-inner">
-            <div><i class="fas fa-globe fa-2x"></i> Türkçe</div>
-            <ul>
-                <li><a href="#">Site Haritası</a></li>
-                <li><a href="#">Bize Ulaşın</a></li>
-                <li><a href="#">Gizlilik & Çerezler</a></li>
-                <li><a href="#">Kullanım Şartları</a></li>
-                <li><a href="#">Markalar</a></li>
-                <li><a href="#">Güvenlik & Ekoloji</a></li>
-                <li><a href="#">&copy; SağlıklıYaşam 2024</a></li>
-            </ul>
         </div>
-    </footer>
-</div>
+    </header><!-- End Header -->
 
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <main id="main">
+        <!-- ======= Diet Programs Section ======= -->
+        <section id="diet-programs" class="diet-programs">
+            <div class="container">
+                <div class="section-title">
+                <h2><br><br>Diyet Planı</h2>
+                </div>
+
+                <div class="image-contain">
+                    <img src="{% static 'a.png' %}" alt="Resim 1">
+                    <img src="{% static 'b.png' %}" alt="Resim 2">
+                    <img src="{% static 'c.png' %}" alt="Resim 3">
+                </div>
+                <br>
+                <h2 id="diyet1">Sağlıklı Kilo Verme Diyet Programı</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Öğün</th>
+                            <th scope="col">Yiyecek</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SABAH (08:00)</td>
+                            <td>
+                                <ul>
+                                    <li>Yulaf ezmesi veya tam buğday gevrekleri</li>
+                                    <li>Biraz ceviz veya badem</li>
+                                    <li>Bir dilim tam tahıllı ekmek</li>
+                                    <li>Peynir veya bir yumurta</li>
+                                    <li>Bir bardak taze sıkılmış meyve suyu veya bir bardak yağsız süt</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ARA ÖĞÜN (10:00)</td>
+                            <td>
+                                <ul>
+                                    <li>Bir meyve (elma, armut, portakal gibi)</li>
+                                    <li>Bir avuç badem veya fındık</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ÖĞLE (12-13:30)</td>
+                            <td>
+                                <ul>
+                                    <li>Izgara tavuk göğsü veya ızgara somon</li>
+                                    <li>Esmer pirinç veya bulgur pilavı</li>
+                                    <li>Sebzeler (brokoli, havuç, kabak gibi) veya salata</li>
+                                    <li>Bir dilim tam tahıllı ekmek</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ARA ÖĞÜN (15:30)</td>
+                            <td>
+                                <ul>
+                                    <li>Bir bardak yoğurt veya bir avuç fındık</li>
+                                    <li>Bir meyve (muz, çilek, üzüm gibi)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>AKŞAM (18-19:30)</td>
+                            <td>
+                                <ul>
+                                    <li>Fırında veya ızgarada sebzeler (patlıcan, kabak, biber gibi)</li>
+                                    <li>Kırmızı et (az yağlı dana eti veya hindi eti)</li>
+                                    <li>Bir kase yeşil salata (marul, roka, salatalık gibi) limon ve zeytinyağı ile</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>GECE (21:00)</td>
+                            <td>
+                                <ul>
+                                    <li>Bir bardak süt veya bir avuç kiraz domates</li>
+                                    <li>2 tane ince grisini (açlık durumu olursa)</li>
+                                    <li>Bir dilim tam tahıllı ekmek veya birkaç tane tam buğday kraker</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>NOTLAR:</td>
+                            <td>
+                                <ul>
+                                    <li>Bol su için, özellikle öğünler arasında ve egzersiz yaparken.</li>
+                                    <li>Porsiyon kontrolüne dikkat edin. Yemeğinizden sonra tokluk hissiyle kalkın.</li>
+                                    <li>Ara öğünlerinizde protein ve lif içeriği yüksek yiyecekler tercih edin.</li>
+                                    <li>Günlük egzersiz rutininize sadık kalın. En az 30 dakika yürüyüş veya egzersiz yapın.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <h2 id="diyet2">Sağlıklı Kilo Alma Diyet Programı</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Öğün</th>
+                            <th scope="col">Yiyecek</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="title">SABAH (08:00)</td>
+                            <td>
+                                <ul>
+                                    <li>Bir dilim tam buğday ekmeği veya yulaf ezmesi</li>
+                                    <li>Bir avuç badem veya fındık</li>
+                                    <li>Bir bardak süt veya yoğurt</li>
+                                    <li>Bir meyve (muz, üzüm gibi)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="title">ARA ÖĞÜN (10:00)</td>
+                            <td>
+                                <ul>
+                                    <li>Bir avuç kuru meyve (kayısı, incir gibi)</li>
+                                    <li>Bir dilim peynir</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="title">ÖĞLE (12-13:30)</td>
+                            <td>
+                                <ul>
+                                    <li>Izgara tavuk göğsü veya ızgara somon</li>
+                                    <li>Esmer pirinç veya bulgur pilavı</li>
+                                    <li>Sebzeler (brokoli, havuç, kabak gibi)</li>
+                                    <li>Bir kase yoğurt</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="title">ARA ÖĞÜN (15:30)</td>
+                            <td>
+                                <ul>
+                                    <li>Bir dilim tam buğday ekmeği veya tam buğday kraker</li>
+                                    <li>Bir avuç fındık veya badem</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="title">AKŞAM (18-19:30)</td>
+                            <td>
+                                <ul>
+                                    <li>Izgara hindi veya dana eti</li>
+                                    <li>Kızarmış patates veya tatlı patates</li>
+                                    <li>Yeşil salata (marul, roka, salatalık gibi)</li>
+                                    <li>Bir dilim tam buğday ekmeği</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="title">GECE (21:00)</td>
+                            <td>
+                                <ul>
+                                    <li>Bir bardak süt veya yoğurt</li>
+                                    <li>Bir muz veya kivi</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="title">NOTLAR:</td>
+                            <td>
+                                <ul>
+                                    <li>Bol su için, özellikle öğünler arasında ve egzersiz yaparken.</li>
+                                    <li>Porsiyon kontrolüne dikkat edin. Yemeğinizden sonra tokluk hissiyle kalkın.</li>
+                                    <li>Ara öğünlerinizde protein ve sağlıklı yağ içeriği yüksek yiyecekler tercih edin.</li>
+                                    <li>Haftada en az 3-4 gün egzersiz yapmaya çalışın, bu size sağlıklı kilo alım sürecinde destek olacaktır.</li>
+                                    <li>Uykunun önemi unutulmamalıdır, günde en az 7-8 saat uyumaya özen gösterin.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <h2 id="diyet3">Şeker Hastaları Diyet Programı</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Öğün</th>
+                            <th scope="col">Yiyecek</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="title">KAHVALTI</td>
+                            <td>
+                                <ul>
+                                    <li>Bir dilim tam buğday ekmeği veya kepekli ekmek</li>
+                                    <li>Bir yumurta (haşlanmış veya omlet)</li>
+                                    <li>Bir avuç çiğ badem veya fındık</li>
+                                    <li>Bir bardak şekersiz çay veya kahve</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="title">ARA ÖĞÜN</td>
+                            <td>
+                                <ul>
+                                    <li>Bir meyve (elma, armut gibi)</li>
+                                    <li>Bir avuç ceviz veya fındık</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="title">ÖĞLE</td>
+                            <td>
+                                <ul>
+                                    <li>Izgara tavuk göğsü veya ızgara balık</li>
+                                    <li>Közlenmiş sebzeler (biber, patlıcan, kabak gibi)</li>
+                                    <li>Bir kase yoğurt</li>
+                                    <li>Bir dilim tam buğday ekmeği</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="title">ARA ÖĞÜN</td>
+                            <td>
+                                <ul>
+                                    <li>Bir avuç badem veya fındık</li>
+                                    <li>Bir bardak taze sıkılmış meyve suyu (şeker ilave edilmemiş)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="title">AKŞAM</td>
+                            <td>
+                                <ul>
+                                    <li>Izgara hindi veya dana eti</li>
+                                    <li>Kızarmış sebzeler (brokoli, karnabahar gibi)</li>
+                                    <li>Yeşil salata (marul, roka, salatalık gibi) limon ve zeytinyağı ile</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="title">GECE</td>
+                            <td>
+                                <ul>
+                                    <li>Bir bardak süt veya yoğurt</li>
+                                    <li>Bir dilim tam buğday ekmeği veya birkaç tane tam buğday kraker</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="title">NOTLAR:</td>
+                            <td>
+                                <ul>
+                                    <li>Bol su için, özellikle öğünler arasında.</li>
+                                    <li>Porsiyon kontrolüne dikkat edin. Yemeğinizden sonra tokluk hissiyle kalkın.</li>
+                                    <li>Taze meyve suyu yerine meyveleri tercih edin.</li>
+                                    <li>Tuz ve şeker kullanımını minimumda tutun.</li>
+                                    <li>Düzenli egzersiz yapmaya çalışın, bu kan şekeri seviyelerini düzenleyebilir.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                
+            </div>
+        </section><!-- End Diet Programs Section -->
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>Healife</h3>
+                        <p> <br>
+                            <strong>Phone:</strong> +1 5589 55488 55<br>
+                            <strong>Email:</strong> healife@iletisim.com<br>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Faydalı Linkler</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Anasayfa</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Hakkımızda</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Hizmetler</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Kullanım Şartları</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Gizlilik Politikası</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Hizmetlerimiz</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Online Yaşam Koçluğu</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Sağlıklı Tarifler</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Egzersiz Planları</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Yapay Zeka Danışmanlığı</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>Bültenimize Katılın</h4>
+                        <p>En güncel sağlık ve yaşam ipuçlarını almak için bültenimize abone olun.</p>
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Abone Ol">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                    &copy; Copyright <strong><span>Healife</span></strong>. Tüm Hakları Saklıdır
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
     
-</body>
-</html>
+        <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
+    
+        <!-- Vendor JS Files -->
+        <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+        <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+    
+        <!-- Template Main JS File -->
+        <script src="{% static 'assets/js/main.js' %}"></script>
+    
+    </body>
+    
+    </html>
+    

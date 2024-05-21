@@ -6,6 +6,7 @@ from .views import export_workout
 
 urlpatterns = [
     path("", HomePageView.as_view(), name="home"),  
+    path("home", HomePageView.as_view(), name="home"), 
     path("register/", register, name="register"),  
     path('diyet/', diets_page, name='diets_page'), 
     path('egzersiz/', training_page, name='training_page'), 
