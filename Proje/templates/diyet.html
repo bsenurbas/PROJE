@@ -1,17 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="tr">
 <head>
-    {% load static %}
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>Healife - Sağlıklı Yaşam</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
@@ -22,19 +14,15 @@
     <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
     <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
     <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'logonew.png' %}">
 
     <!-- Template Main CSS File -->
     <link href="{% static 'home.css' %}" rel="stylesheet">
-
     <style>
-        .image-container img {
-            width: 30%;
-            height: auto;
-            margin: 10px;
-        }
-    </style>
-</head>
 
+    </style>
+    <title>Diyet Planı</title>
+</head>
 <body>
     {% load static %}
     <!-- ======= Top Bar ======= -->
@@ -57,17 +45,18 @@
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo me-auto"><a href=" ">Healife</a></h1>
+            <h1 class="logo me-auto" style="color:#28a745;"><a href=" ">Healife</a></h1>
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Anasayfa</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'training_page' %}">Egzersiz Planları</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'ipucu_page' %}">Sağlıklı İpuçları</a></li>
+                    <li><a href="{% url 'home' %}" style="color:#28a745;">Ana Sayfa</a></li>
+                    <li><a href="{% url 'diets_page' %}">Diyet</a></li>
                     <li><a href="{% url 'bmi_recommendations' %}">Diyet Arama</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'yapayzeka' %}">Yapay Zeka</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'contact_page' %}">İletişim</a></li>
-                    <li><a href="{% url 'logout' %}" class="logout-btn">Çıkış Yap</a></li>
+                    <li><a href="{% url 'training_page' %}">Egzersiz</a></li>
+                    <li><a href="{% url 'ipucu_page' %}">Sağlıklı İpuçları</a></li>
+                    <li><a href="{% url 'yapayzeka' %}">Yapay Zeka</a></li>
+                    <li><a href="{% url 'contact_page' %}">İletişim</a></li>
+                    <li><a style="padding: 15px;" href="{% url 'logout' %}" class="btn logout-btn">Çıkış Yap</a></li> 
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -80,7 +69,7 @@
         <section id="diet-programs" class="diet-programs">
             <div class="container">
                 <div class="section-title">
-                <h2><br><br>Diyet Planı</h2>
+                <h2 style="margin-top: 5%;"><br><br>Diyet Planı</h2>
                 </div>
 
                 <div class="image-contain">
