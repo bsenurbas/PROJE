@@ -7,7 +7,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="{% static 'logonew.png' %}">
 </head>
 <body>
-  <img class="person" src="https://pixsector.com/cache/94bed8d5/av3cbfdc7ee86dab9a41d.png" alt="Giriş Resmi" class="giris-resmi">
+  <img class="person" style="margin-top: 5%;" src="https://pixsector.com/cache/94bed8d5/av3cbfdc7ee86dab9a41d.png" alt="Giriş Resmi" class="giris-resmi">
 <div class="kutu">
   <form class="giris" method="POST" action="{% url 'login' %}">
     {% csrf_token %}
@@ -24,7 +24,9 @@
   <div class="kayit-yazi">
     Hesabın yok mu? <a href="{% url 'register' %}" class="kayitolbuton">Kayıt Ol</a>
     <br>
-    <a href="{% url 'password_reset' %}" class="sifre-sifirla">Şifreni mi unuttun?</a>
+    <a href="{% url 'password_reset' %}" class="sifre-sifirla">Şifreni Mi Unuttun?</a>
+    <br>
+    <a href="{% url 'admin:index' %}" class="">Admin Girişi</a>
 </div>
 </div>
 </body>
