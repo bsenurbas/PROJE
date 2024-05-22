@@ -18,6 +18,7 @@
     <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
     <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
     <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'logonew.png' %}">
 
     <!-- Template Main CSS File -->
     <link href="{% static 'home.css' %}" rel="stylesheet">
@@ -29,7 +30,7 @@
         <div class="container d-flex justify-content-between">
             <div class="contact-info d-flex align-items-center">
                 <i class="bi bi-envelope"></i> <a href="mailto:busenurb277@gmail.com">healife@iletisim.com</a>
-                <i class="bi bi-phone"></i> +1 5589 55488 55
+                <i class="bi bi-phone"></i> +90 546 546 59 45
             </div>
             <div class="d-none d-lg-flex social-links align-items-center">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -48,13 +49,13 @@
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Anasayfa</a></li>
-                    <li><a href="{% url 'diets_page' %}">Diyet Planları</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'training_page' %}">Egzersiz Planları</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'ipucu_page' %}">Sağlıklı İpuçları</a></li>
+                    <li><a href="{% url 'home' %}" style="color:#28a745;">Ana Sayfa</a></li>
+                    <li><a href="{% url 'diets_page' %}">Diyet</a></li>
                     <li><a href="{% url 'bmi_recommendations' %}">Diyet Arama</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'yapayzeka' %}">Yapay Zeka</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'contact_page' %}">İletişim</a></li>
+                    <li><a href="{% url 'training_page' %}">Egzersiz</a></li>
+                    <li><a href="{% url 'ipucu_page' %}">Sağlıklı İpuçları</a></li>
+                    <li><a href="{% url 'yapayzeka' %}">Yapay Zeka</a></li>
+                    <li><a href="{% url 'contact_page' %}">İletişim</a></li>
                     <li><a href="{% url 'logout' %}" class="logout-btn">Çıkış Yap</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -123,7 +124,7 @@
                     <div class="col-lg-3 col-md-6 footer-contact">
                         <h3>Healife</h3>
                         <p> <br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
+                            <strong>Phone:</strong> +90 546 546 59 45<br>
                             <strong>Email:</strong> healife@iletisim.com<br>
                         </p>
                     </div>
