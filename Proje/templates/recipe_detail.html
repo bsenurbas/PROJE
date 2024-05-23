@@ -4,11 +4,9 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <br><br><br><br>
     <title>{{ recipe.name }}</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <!-- Vendor CSS Files -->
     <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
     <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -19,12 +17,10 @@
     <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
     <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'logonew.png' %}">
-
     <!-- Template Main CSS File -->
     <link href="{% static 'home.css' %}" rel="stylesheet">
 </head>
 <body>
-    {% load static %}
     <!-- ======= Top Bar ======= -->
     <div id="topbar" class="d-flex align-items-center fixed-top">
         <div class="container d-flex justify-content-between">
@@ -40,18 +36,15 @@
             </div>
         </div>
     </div>
-
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
-
             <h1 class="logo me-auto" style="color:#28a745 ;"><a href=" ">Healife</a></h1>
-
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
                     <li><a href="{% url 'user_page' %}" style="color:#28a745;">Ana Sayfa</a></li>
                     <li><a href="{% url 'diets_page' %}">Diyet</a></li>
-                    <li><a href="{% url 'bmi_recommendations' %}">Diyet Arama</a></li>
+                    <li><a href="{% url 'bmi_recommendations' %}">Diyet-Egzersiz Arama</a></li>
                     <li><a href="{% url 'training_page' %}">Egzersiz</a></li>
                     <li><a href="{% url 'ipucu_page' %}">Sağlıklı İpuçları</a></li>
                     <li><a href="{% url 'yapayzeka' %}">Yapay Zeka</a></li>
@@ -60,75 +53,71 @@
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
-
         </div>
     </header><!-- End Header -->
-    <div class="menu-btn">
-        <i class="fas fa-bars fa-2x"></i>
-    </div>
-
-    <div class="container">
-        <nav class="main-nav">
-            <img class="logo" src="{% static 'logonew.png' %}">
-        
-            <ul class="main-menu">
-                <li><a href="#">Ana Sayfa</a></li>
-                <li><a href="#diyet1">Kilo Vermek İsteyenler için</a></li>
-                <li><a href="#diyet2">Kilo Almak İsteyenler İçin</a></li>
-                <li><a href="#diyet3">Şeker Hastaları İçin</a></li>
-                <li><a href="#">Yapay Zeka</a></li>
-            </ul>
-        
-            <ul class="right-menu">
-                <li>
-                    <a href="#">
-                        <i class="fas fa-search"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        <h1 class="mb-4">{{ recipe.name }}</h1>
-        
-        <table class="table table-bordered">
+    <main id="main">
+        <section>
+    <div class="container mt-5 pt-5">
+         
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <h1 class="mb-4"><br>{{ recipe.name }}</h1>
+                    <th scope="col">Öğün</th>
+                    <th scope="col">Yiyecek</th>
+                </tr>
+            </thead>
             <tbody>
                 <tr>
-                    <th scope="row">Hedef</th>
-                    <td>{{ recipe.goal }}</td>
+                    <td style="width: 15%;">SABAH (08:00)</td>
+                    <td>{{ recipe.sabah|linebreaksbr }}</td>
                 </tr>
                 <tr>
-                    <th scope="row">Malzemeler</th>
-                    <td>{{ recipe.ingredients }}</td>
+                    <td>ARA ÖĞÜN (10:00)</td>
+                    <td>{{ recipe.ara_ogun_1|linebreaksbr }}</td>
                 </tr>
                 <tr>
-                    <th scope="row">Liste</th>
-                    <td>{{ recipe.list }}</td>
+                    <td>ÖĞLE (12-13:30)</td>
+                    <td>{{ recipe.ogle|linebreaksbr }}</td>
                 </tr>
+                <tr>
+                    <td>ARA ÖĞÜN (15:30)</td>
+                    <td>{{ recipe.ara_ogun_2|linebreaksbr }}</td>
+                </tr>
+                <tr>
+                    <td>AKŞAM (18-19:30)</td>
+                    <td>{{ recipe.aksam|linebreaksbr }}</td>
+                </tr>
+                <tr>
+                    <td>GECE (21:00)</td>
+                    <td>{{ recipe.gece|linebreaksbr }}</td>
+                </tr>
+                <tr>
+                    <td>NOTLAR:</td>
+                    <td>{{ recipe.notlar|linebreaksbr }}</td>
+                </tr>
+                <tr>
             </tbody>
         </table>
-
+    
         <!-- İndirme düğmesi -->
         <a href="{% url 'export_recipe' recipe.id %}" class="btn btn-primary">Tarifi İndir</a>
-    
+    </div>
+</section>
+</main>
+
     <!-- ======= Footer ======= -->
     <footer id="footer">
         <div class="footer-top">
             <div class="container">
                 <div class="row">
-
                     <div class="col-lg-3 col-md-6 footer-contact">
                         <h3>Healife</h3>
-                        <p> <br>
+                        <p><br>
                             <strong>Phone:</strong> +90 546 546 59 45<br>
                             <strong>Email:</strong> healife@iletisim.com<br>
                         </p>
                     </div>
-
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Faydalı Linkler</h4>
                         <ul>
@@ -139,7 +128,6 @@
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Gizlilik Politikası</a></li>
                         </ul>
                     </div>
-
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Hizmetlerimiz</h4>
                         <ul>
@@ -149,7 +137,6 @@
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Yapay Zeka Danışmanlığı</a></li>
                         </ul>
                     </div>
-
                     <div class="col-lg-4 col-md-6 footer-newsletter">
                         <h4>Bültenimize Katılın</h4>
                         <p>En güncel sağlık ve yaşam ipuçlarını almak için bültenimize abone olun.</p>
@@ -157,11 +144,9 @@
                             <input type="email" name="email"><input type="submit" value="Abone Ol">
                         </form>
                     </div>
-
                 </div>
             </div>
         </div>
-
         <div class="container d-md-flex py-4">
             <div class="me-md-auto text-center text-md-start">
                 <div class="copyright">
