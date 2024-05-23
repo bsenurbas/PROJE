@@ -10,51 +10,7 @@ from .forms import UploadFileForm,BlogPostForm ,FileUploadForm, CustomUserCreati
 from django.contrib.auth.decorators import login_required
 import csv
 
-def export_workout(request, workout_id):
-    # Veritabanından workout çekme
-    workout = Workout.objects.get(id=workout_id)
-    
-    # HttpResponse nesnesi oluşturma
-    response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = f'attachment; filename="{workout.name}.csv"'
-    
-    # CSV yazarı oluşturma
-    writer = csv.writer(response)
-    
-    # CSV dosyasına veri yazma
-    writer.writerow(['Açıklama:'])
-    writer.writerow([workout.description])
-    writer.writerow([''])
-    writer.writerow(['Not:'])
-    writer.writerow([workout.note])
-    writer.writerow([''])
-    writer.writerow(['Egzersiz:'])
-    writer.writerow([workout.exercise])
-    
-    return response
 
-def export_recipe(request, recipe_id):
-    # Veritabanından tarifi çekme
-    recipe = Recipe.objects.get(id=recipe_id)
-    
-    # HttpResponse nesnesi oluşturma
-    response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = f'attachment; filename="{recipe.name}.csv"'
-    
-    # CSV yazarı oluşturma
-    writer = csv.writer(response)
-    
-    # CSV dosyasına veri yazma
-    writer.writerow(['Hedef:'])
-    writer.writerow([recipe.goal])
-    writer.writerow([''])
-    writer.writerow(['Malzemeler:'])
-    writer.writerow([recipe.ingredients])
-    writer.writerow([''])
-    writer.writerow(['Liste:'])
-    writer.writerow([recipe.list])
-    
-    return response
 
 def register(request):
     if request.method == 'POST':
@@ -143,6 +99,69 @@ def recipe_detail(request, pk):
 def workout_detail(request, pk):
     workout = get_object_or_404(Workout, pk=pk)
     return render(request, 'workout_detail.html', {'workout': workout})
+
+def export_workout(request, workout_id):
+    # Veritabanından workout çekme
+    workout = Workout.objects.get(id=workout_id)
+    
+    # HttpResponse nesnesi oluşturma
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = f'attachment; filename="{workout.name}.csv"'
+    
+    # CSV yazarı oluşturma
+    writer = csv.writer(response)
+    
+    # CSV dosyasına veri yazma
+    writer.writerow(['Pazartesi:'])
+    writer.writerow([workout.pazartesi])
+    writer.writerow(['Salı:'])
+    writer.writerow([workout.salı])
+    writer.writerow(['Çarşamba:'])
+    writer.writerow([workout.çarşamba])
+    writer.writerow(['Perşembe:'])
+    writer.writerow([workout.perşembe])
+    writer.writerow(['Cuma:'])
+    writer.writerow([workout.cuma])
+    writer.writerow(['Cumartesi:'])
+    writer.writerow([workout.cumartesi])
+    writer.writerow(['Pazar:'])
+    writer.writerow([workout.pazar])
+    writer.writerow([''])
+    writer.writerow(['Açıklama:'])
+    writer.writerow([workout.description])
+    writer.writerow(['Not:'])
+    writer.writerow([workout.note])
+    
+    return response
+
+def export_recipe(request, recipe_id):
+    # Veritabanından tarifi çekme
+    recipe = Recipe.objects.get(id=recipe_id)
+    
+    # HttpResponse nesnesi oluşturma
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = f'attachment; filename="{recipe.name}.csv"'
+    
+    # CSV yazarı oluşturma
+    writer = csv.writer(response)
+    
+    # CSV dosyasına veri yazma
+    writer.writerow(['Sabah:'])
+    writer.writerow([recipe.sabah])
+    writer.writerow(['Ara Öğün 1:'])
+    writer.writerow([recipe.ara_ogun_1])
+    writer.writerow(['Öğle:'])
+    writer.writerow([recipe.ogle])
+    writer.writerow(['Ara Öğün 2:'])
+    writer.writerow([recipe.ara_ogun_2])
+    writer.writerow(['Akşam:'])
+    writer.writerow([recipe.aksam])
+    writer.writerow(['Gece:'])
+    writer.writerow([recipe.gece])
+    writer.writerow(['Notlar:'])
+    writer.writerow([recipe.notlar])
+    
+    return response
 
 def import_data(request):
     if request.method == "POST":
